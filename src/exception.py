@@ -1,5 +1,5 @@
 import sys
-import logging
+from logger import logging
 
 def error_message_detail(error, erro_detail:sys):
     _,_,exe_tb=erro_detail.exc_info()
@@ -18,7 +18,7 @@ if __name__=="__main__":
     try:
         a=1/0
     except Exception as e:
-        
+        logging.info(e)
         raise CustomException(e,sys)
 
 
